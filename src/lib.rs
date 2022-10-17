@@ -8,7 +8,10 @@ pub struct Object {
 }
 
 pub fn update(object: Object) -> Object {
-    Object { flag: true, data: object.data + "\nRust Update=\"👏\"" }
+    Object {
+        flag: true,
+        data: object.data + "\nRust Update=\"👏\"",
+    }
 }
 
 // Rust interop
@@ -25,10 +28,16 @@ pub struct CObject {
 }
 
 fn from_c_object(object: CObject) -> Object {
-    Object { flag: object.flag, data: from_c_string(object.data) }
+    Object {
+        flag: object.flag,
+        data: from_c_string(object.data),
+    }
 }
 fn to_c_object(object: Object) -> CObject {
-    CObject { flag: object.flag, data: to_c_string(object.data) }
+    CObject {
+        flag: object.flag,
+        data: to_c_string(object.data),
+    }
 }
 
 fn from_c_string(value: *const c_char) -> String {
@@ -61,9 +70,12 @@ pub struct WebObject {
 impl WebObject {
     #[wasm_bindgen(constructor)]
     pub fn new(flag: bool, data: String) -> WebObject {
-        WebObject { flag: flag, data: data }
+        WebObject {
+            flag: flag,
+            data: data,
+        }
     }
-    
+
     #[wasm_bindgen(getter)]
     pub fn flag(&self) -> bool {
         self.flag.clone()
@@ -86,10 +98,16 @@ impl WebObject {
 }
 
 fn from_web_object(object: WebObject) -> Object {
-    Object { flag: object.flag, data: object.data }
+    Object {
+        flag: object.flag,
+        data: object.data,
+    }
 }
 fn to_web_object(object: Object) -> WebObject {
-    WebObject { flag: object.flag, data: object.data }
+    WebObject {
+        flag: object.flag,
+        data: object.data,
+    }
 }
 
 #[wasm_bindgen]

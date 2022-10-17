@@ -1,0 +1,3 @@
+module RustInterop {
+    header "rust_interop.h"
+}

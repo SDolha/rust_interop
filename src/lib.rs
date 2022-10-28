@@ -1,6 +1,6 @@
 use core::ffi::c_char;
 use std::ffi::{CStr, CString};
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::prelude::*;
 
 pub struct Object {
     pub flag: bool,

@@ -1,5 +1,4 @@
-use core::ffi::c_char;
-use std::ffi::{CStr, CString};
+use std::ffi::{c_char, CStr, CString};
 use wasm_bindgen::prelude::*;
 
 pub struct Object {

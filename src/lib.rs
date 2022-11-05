@@ -69,15 +69,12 @@ pub struct WebObject {
 impl WebObject {
     #[wasm_bindgen(constructor)]
     pub fn new(flag: bool, data: String) -> WebObject {
-        WebObject {
-            flag: flag,
-            data: data,
-        }
+        WebObject { flag, data }
     }
 
     #[wasm_bindgen(getter)]
     pub fn flag(&self) -> bool {
-        self.flag.clone()
+        self.flag
     }
 
     #[wasm_bindgen(setter)]

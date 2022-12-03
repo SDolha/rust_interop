@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <script type="module">
-        import init, { WebObject, web_update } from "./rsinterop.js";
+        import init, { WebObject, web_update } from './rsinterop.js';
         init().then(() => {
-            var object = new WebObject(false, "Object Name=\"JavaScript📃\"");
+            var object = new WebObject(false, 'Object Name="JavaScript📃"');
             object = web_update(object);
-            document.body.innerHTML = "flag: " + object.flag + "<br/>" + object.data.replace(/\n/, "<br/>");
+            document.body.innerHTML = 'flag: ' + object.flag + '<br/>' + object.data.replace(/\n/, '<br/>');
         });
     </script>
 </head>
